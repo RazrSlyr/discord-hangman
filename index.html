@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="p-5 pb-10 text-center">
+        <p class="text-5xl">Hangman UNSPOILERED!</p>
+    </div>
+    <div class="grid grid-cols-3 place-items-center p-5 gap-2">
+        <div class="grid grid-col-1 place-items-center">
+            <p class="text-3xl">
+                RULES
+                </h>
+            <div class="p-5 text-center">
+                Hangman UNSPOILERED! is a version of Hangman that you can play using discord messages!
+                The size and shape of the word is signified by the number of "?" on top.
+                To guess a letter, unspoiler all entries on that letter's row.
+                If a letter is present in the word, then at least one of spot on its row will contain the letter.
+                The remaining will be <span class="text-green-500">green squares</span>.
+                If a letter is not present in the word, all entries in the row will be <span class="text-red-500">red
+                    squares</span>.
+                If you guess a letter and it is not present, unspoiler one element of the "hangman" below.
+                If you unspoiler all the letters in the word before you unspoiler all of the hangman, then you win!
+                If you unspoiler all of the hangman before you unspoiler all the letters in the word, then you lose. :(
+            </div>
+        </div>
+        <div class="col-span-2 grid grid-col-1 place-items-center">
+            <p class="text-3xl">
+                PLAY!
+            </p>
+            <div class="p-5 text-center">
+                To play, simply enter your word or phrase in the textbox below, and click generate!
+                Then, copy and paste the two Discord messages!
+            </div>
+            <input id="phrase" type="text" placeholder="put your word/phrase here!"
+                class="p-2 w-3/4 border border-slate-200 rounded focus:outline-none focus:border-green-600"></input>
+
+            <button id="generate"
+                class="m-2 p-5 rounded-full text-white bg-green-400 hover:bg-green-600 hover:drop-shadow transition duration-300">
+                GENERATE!
+            </button>
+            <div class="grid grid-cols-2 gap-5 p-2 w-full ">
+                <div class="grid grid-cols-1 place-items-center">
+                    <div id="first"
+                        class="overflow-auto bg-slate-500 border border-8 rounded-lg p-2 border-indigo-600 text-white h-64 w-full">
+                        First message will show here!
+                    </div>
+                    <button id="copy-1"
+                        class="m-2 p-5 rounded-full text-white bg-indigo-400 hover:bg-indigo-600 hover:drop-shadow transition duration-300">
+                        Copy Message 1
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 place-items-center">
+                    <div id="second"
+                        class="overflow-auto bg-slate-500 border border-8 rounded-lg p-2 border-indigo-600 text-white h-64 w-full">
+                        Second message will show here!
+                    </div>
+                    <button id="copy-2"
+                        class="m-2 p-5 rounded-full text-white bg-indigo-400 hover:bg-indigo-600 hover:drop-shadow transition duration-300">
+                        Copy Message 2
+                    </button>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <script src="./discord_hangman.js"></script>
+</body>
