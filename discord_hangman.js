@@ -3,7 +3,6 @@ for (let i = "a".charCodeAt(0); i <= "z".charCodeAt(0); i++) {
     letter_map.set(String.fromCharCode(i), `:regional_indicator_${String.fromCharCode(i)}:`)
 }
 
-let out = "";
 let star = "⭐️";
 let question = ":grey_question:";
 let space = "⬛️";
@@ -12,6 +11,10 @@ let red = ":red_square:";
 let green = ":green_square:";
 
 function generateHangman() {
+    let out = "";
+    d3.select("#first").html("");
+    d3.select("#second").html("");
+    
     let phrase = d3.select("#phrase").property("value");
     if (phrase == "") {
         alert("You didn't enter a phrase dingus");
